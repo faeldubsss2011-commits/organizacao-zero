@@ -94,5 +94,65 @@
     }
   }
 </script>
+</body><!-- ============================= --><!-- NOVA PÁGINA — registro-2002.html --><!-- Salve o código abaixo como um arquivo separado --><!-- ============================= --><!--
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O.Z — Registro de Tragédias</title>
+  <style>
+    body{margin:0; min-height:100vh; background:#05070b; color:#cfe3ff; font-family: ui-monospace, Menlo, Consolas, monospace}
+    header{padding:24px; border-bottom:1px solid #13224a}
+    main{max-width:800px; margin:32px auto; padding:0 16px}
+    .card{background:linear-gradient(180deg,#0a1330,#070c1f); border:1px solid #1a2f6a; border-radius:16px; padding:24px; box-shadow:0 20px 60px rgba(0,0,0,.45)}
+    .date{color:#9fc2ff; font-weight:bold}
+    p{line-height:1.6}
+    .sig{margin-top:24px; opacity:.8}
+    .login{max-width:360px; margin:0 auto; display:grid; gap:12px}
+    input{background:#050a1c; color:#cfe3ff; border:1px solid #1a2f6a; border-radius:10px; padding:10px}
+    button{background:linear-gradient(180deg,#2a5cff,#1f3b7a); color:#fff; border:none; border-radius:10px; padding:10px; cursor:pointer}
+    .err{color:#ff4d4d; min-height:1.2em}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+<header><strong>ORGANIZAÇÃO ZERO</strong> — Arquivo Recuperado</header>
+<main>
+  <section id="gate" class="card">
+    <h2>Autenticação — RH</h2>
+    <div class="login">
+      <input id="email" placeholder="Email" />
+      <input id="senha" type="password" placeholder="Senha" />
+      <button onclick="auth()">Acessar</button>
+      <div id="err" class="err"></div>
+    </div>
+  </section>
+
+  <section id="doc" class="card hidden">
+    <p class="date">09-27-2002</p>
+    <p><strong>REGISTRO DE TRAGÉDIAS EM COMUM.</strong></p>
+    <p>Recentemente venho estudando mais sobre a história de <strong>Highville</strong> e notei um padrão um tanto quanto… bizarro.</p>
+    <p>Ao longo dos anos aconteceram tragédias em um certo tempo e esse ano não foi diferente. Parece que de <strong>21 em 21 anos</strong> alguma tragédia acontece aqui em Highville. Isso vem sendo registrado desde <strong>1876, 1897, 1918, 1939, 1960, 1981</strong> e enfim <strong>2002</strong>.</p>
+    <p>Desaparecimentos em massa também vêm ocorrendo, algo que me deixa muito intrigado a respeito dessa cidade. Tem algo de errado aqui… e eu tenho que descobrir.</p>
+    <p class="sig">Ass: <strong>Harry Barett</strong><br/>Departamento de RH</p>
+  </section>
+</main>
+<script>
+  const OK_EMAIL = 'Harry.barettrh';
+  const OK_PASS  = '002-6672';
+  function auth(){
+    const e = document.getElementById('email').value.trim();
+    const s = document.getElementById('senha').value;
+    const err = document.getElementById('err');
+    if(e===OK_EMAIL && s===OK_PASS){
+      document.getElementById('gate').classList.add('hidden');
+      document.getElementById('doc').classList.remove('hidden');
+    } else {
+      err.textContent = 'Credenciais inválidas.';
+    }
+  }
+</script>
 </body>
-  </html>
+</html>
+--></html>

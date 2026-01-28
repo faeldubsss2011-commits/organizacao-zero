@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organização Zero — Acesso Restrito</title>
+  <style>
+    :root{
+      --bg:#05070b; --fg:#cfe3ff; --accent:#6aa7ff; --danger:#ff4d4d;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh; background:radial-gradient(1200px 600px at 50% -20%, #0c1530, var(--bg));
+      color:var(--fg); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing:.2px;
+    }
+    .noise:before{
+      content:""; position:fixed; inset:0; pointer-events:none;
+      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.06"/></svg>');
+      mix-blend-mode:overlay; opacity:.35
+    }
+    header{
+      padding:24px; border-bottom:1px solid #13224a; display:flex; gap:12px; align-items:center
+    }
+    .logo{font-weight:800; letter-spacing:2px}
+    .pill{border:1px solid #1f3b7a; padding:4px 10px; border-radius:999px; font-size:12px}
+    main{max-width:900px; margin:32px auto; padding:0 16px}
+    .card{
+      background:linear-gradient(180deg, #0a1330, #070c1f);
+      border:1px solid #1a2f6a; border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,.45);
+      overflow:hidden
+    }
+    .card h2{margin:0; padding:16px 20px; border-bottom:1px solid #142a61}
+    .card .content{padding:20px}
+    .login{display:grid; gap:12px; max-width:360px}
+    input{
+      background:#050a1c; color:var(--fg); border:1px solid #1a2f6a; border-radius:10px; padding:10px
+    }
+    button{
+      background:linear-gradient(180deg, #2a5cff, #1f3b7a); color:white; border:none; border-radius:10px; padding:10px; cursor:pointer
+    }
+    .err{color:var(--danger); min-height:1.2em}
+    .hidden{display:none}
+    .record p{line-height:1.6}
+    .date{color:#9fc2ff}
+    .img-wrap{margin-top:16px; border:1px dashed #2a4aa0; border-radius:14px; padding:10px}
+    img{width:100%; border-radius:10px}
+    footer{opacity:.6; text-align:center; padding:20px}
+  </style>
+</head>
+<body class="noise">
+<header>
+  <div class="logo">ORGANIZAÇÃO ZERO</div>
+  <span class="pill">ACESSO RESTRITO</span>
+</header>
+<main>
+  <section id="login" class="card">
+    <h2>Autenticação</h2>
+    <div class="content">
+      <div class="login">
+        <input id="user" placeholder="Identificação" />
+        <input id="pass" type="password" placeholder="Senha" />
+        <button onclick="auth()">Entrar</button>
+        <div id="err" class="err"></div>
+      </div>
+    </div>
+  </section>  <section id="dash" class="card hidden">
+    <h2>Registro Confidencial</h2>
+    <div class="content record">
+      <p class="date"><strong>12-05-1980</strong></p>
+      <p>Nessa manhã, uma experiência foi realizada com o experimento <strong>1256</strong>, conhecido como <strong>Lire</strong>. O doutor <strong>H.</strong> adotou ele há <strong>5 anos</strong>, fachada para estudar a raça <strong>catto</strong> e descobrir que essa raça é aberta pra mutações. Porém, quando tínhamos o intuito de criar ele como <strong>arma biológica</strong>, um massacre aconteceu aqui dentro da <strong>O.Z</strong>.</p>
+      <p><strong>Doutor H. está morto.</strong></p>
+      <p>O Catto quer a <strong>ESFERA ZERO</strong>.</p>
+      <p>Ninguém conseguiu bater de frente com ele. Todos morreram. Eu fui um dos únicos que sobreviveu e me escondi entre caixotes de armas e estou registrando isso nesse computador. Consegui gravar um vídeo antes do massacre, dele sendo fundido com <strong>energia zero</strong> e <strong>eletricidade extrema</strong>, mas a descarga elétrica corrompeu o arquivo de vídeo. Na correria, tirei uma por acidente.</p>
+      <p><strong>Essa era a foto tirada:</strong></p>
+      <div class="img-wrap">
+        <img src="lire_vhs.png" alt="Registro VHS — Experimento 1256 (Lire)" />
+      </div>
+    </div>
+  </section>
+</main>
+<footer>© O.Z — Documento não autorizado</footer>
+<script>
+  const OK_USER = 'asphelow.yago';
+  const OK_PASS = 'Z0-9293';
+  function auth(){
+    const u = document.getElementById('user').value.trim();
+    const p = document.getElementById('pass').value;
+    const err = document.getElementById('err');
+    if(u===OK_USER && p===OK_PASS){
+      document.getElementById('login').classList.add('hidden');
+      document.getElementById('dash').classList.remove('hidden');
+    } else {
+      err.textContent = 'Credenciais inválidas.';
+    }
+  }
+</script>
+</body><!-- ============================= --><!-- NOVA PÁGINA — registro-2002.html --><!-- Salve o código abaixo como um arquivo separado --><!-- ============================= --><!--
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O.Z — Registro de Tragédias</title>
+  <style>
+    body{margin:0; min-height:100vh; background:#05070b; color:#cfe3ff; font-family: ui-monospace, Menlo, Consolas, monospace}
+    header{padding:24px; border-bottom:1px solid #13224a}
+    main{max-width:800px; margin:32px auto; padding:0 16px}
+    .card{background:linear-gradient(180deg,#0a1330,#070c1f); border:1px solid #1a2f6a; border-radius:16px; padding:24px; box-shadow:0 20px 60px rgba(0,0,0,.45)}
+    .date{color:#9fc2ff; font-weight:bold}
+    p{line-height:1.6}
+    .sig{margin-top:24px; opacity:.8}
+    .login{max-width:360px; margin:0 auto; display:grid; gap:12px}
+    input{background:#050a1c; color:#cfe3ff; border:1px solid #1a2f6a; border-radius:10px; padding:10px}
+    button{background:linear-gradient(180deg,#2a5cff,#1f3b7a); color:#fff; border:none; border-radius:10px; padding:10px; cursor:pointer}
+    .err{color:#ff4d4d; min-height:1.2em}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+<header><strong>ORGANIZAÇÃO ZERO</strong> — Arquivo Recuperado</header>
+<main>
+  <section id="gate" class="card">
+    <h2>Autenticação — RH</h2>
+    <div class="login">
+      <input id="email" placeholder="Email" />
+      <input id="senha" type="password" placeholder="Senha" />
+      <button onclick="auth()">Acessar</button>
+      <div id="err" class="err"></div>
+    </div>
+  </section>
+
+  <section id="doc" class="card hidden">
+    <p class="date">09-27-2002</p>
+    <p><strong>REGISTRO DE TRAGÉDIAS EM COMUM.</strong></p>
+    <p>Recentemente venho estudando mais sobre a história de <strong>Highville</strong> e notei um padrão um tanto quanto… bizarro.</p>
+    <p>Ao longo dos anos aconteceram tragédias em um certo tempo e esse ano não foi diferente. Parece que de <strong>21 em 21 anos</strong> alguma tragédia acontece aqui em Highville. Isso vem sendo registrado desde <strong>1876, 1897, 1918, 1939, 1960, 1981</strong> e enfim <strong>2002</strong>.</p>
+    <p>Desaparecimentos em massa também vêm ocorrendo, algo que me deixa muito intrigado a respeito dessa cidade. Tem algo de errado aqui… e eu tenho que descobrir.</p>
+    <p class="sig">Ass: <strong>Harry Barett</strong><br/>Departamento de RH</p>
+  </section>
+</main>
+<script>
+  const OK_EMAIL = 'Harry.barettrh';
+  const OK_PASS  = '002-6672';
+  function auth(){
+    const e = document.getElementById('email').value.trim();
+    const s = document.getElementById('senha').value;
+    const err = document.getElementById('err');
+    if(e===OK_EMAIL && s===OK_PASS){
+      document.getElementById('gate').classList.add('hidden');
+      document.getElementById('doc').classList.remove('hidden');
+    } else {
+      err.textContent = 'Credenciais inválidas.';
+    }
+  }
+</script>
+</body>
+</html>
+--></html>
